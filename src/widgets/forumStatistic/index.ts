@@ -1,0 +1,1 @@
+export {ForumStat} from './ui/forumStatistic'
