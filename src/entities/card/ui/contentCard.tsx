@@ -25,7 +25,11 @@ function HeaderCard({
   );
 }
 
-function FooterCard({ children }: { children: ReactNode }) {
+function FooterCard({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <CardFooter>
       <Button

@@ -15,18 +15,22 @@ export function Header() {
           <Link href="/" className="hover:text-blue-400 transition-colors">
             Home
           </Link>
-          <Link href="/categories" className="hover:text-blue-400 transition-colors">
+          <Link
+            href="/categories"
+            className="hover:text-blue-400 transition-colors"
+          >
             Categories
           </Link>
-         
         </nav>
         <div className="flex items-center space-x-4">
           <div className="relative hidden md:block">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-            <Input
-              className="pl-10 bg-gray-900 border-gray-700 text-gray-200 focus:ring-blue-400 focus:border-blue-400"
-              placeholder="Search..."
-            />
+            <Link href={"search"}>
+              <Input
+                className="pl-10 bg-gray-900 border-gray-700 text-gray-200 cursor-pointer hover:ring-blue-400 hover:border-blue-400"
+                placeholder="Search..."
+              />
+            </Link>
           </div>
           <Button
             variant="ghost"
