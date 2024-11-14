@@ -1,6 +1,5 @@
 import { Button } from "@/shared/ui/button";
 import { Search, Bell, Menu } from "lucide-react";
-import { Input } from "@/shared/ui/input";
 import React from "react";
 import Link from "next/link";
 
@@ -16,20 +15,19 @@ export function Header() {
             Home
           </Link>
           <Link
-            href="/categories"
+            href="/catalog"
             className="hover:text-blue-400 transition-colors"
           >
-            Categories
+            Catalog
           </Link>
         </nav>
         <div className="flex items-center space-x-4">
           <div className="relative hidden md:block">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
             <Link href={"search"}>
-              <Input
-                className="pl-10 bg-gray-900 border-gray-700 text-gray-200 cursor-pointer hover:ring-blue-400 hover:border-blue-400"
-                placeholder="Search..."
-              />
+              <div className="flex pl-10 text-gray-200 text-opacity-60 text-sm items-center w-56 h-9 border bg-gray-900 border-gray-700 cursor-pointer  hover:ring-blue-400 hover:border-blue-400 rounded-lg">
+                Search...
+              </div>
             </Link>
           </div>
           <Button
@@ -39,9 +37,11 @@ export function Header() {
           >
             <Bell className="h-5 w-5 " />
           </Button>
-          <Button variant="outline" className="hidden md:inline-flex">
-            Log In
-          </Button>
+          <Link href={"/login"}>
+            <Button variant="outline" className="hidden md:inline-flex">
+              Log In
+            </Button>
+          </Link>
           <Button
             variant="ghost"
             size="icon"
