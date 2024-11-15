@@ -22,7 +22,7 @@ export function AdminPost() {
           redesigned user interface, these updates are designed to make your
           time on our platform more enjoyable and productive.
         </p>
-        <StandartCardInfo cardTime="2 hours ago" username="Posted by Admin" />
+        <StandartCardInfo cardTime="2 hours" username="Posted by Admin" />
       </ContentCard>
     </Card>
   );
