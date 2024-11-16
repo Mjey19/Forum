@@ -3,11 +3,12 @@ import { ContentCard, FooterCard, HeaderCard } from "@/entities/card";
 import { useThreadsList } from "@/features/threads/use-threads-list";
 import { Card } from "@/shared/ui/card";
 import { StandartCardInfo } from "@/shared/ui/card-info";
+import { Skeleton } from "@/shared/ui/skeleton";
 import {
   CatalogCard,
   CatalogCardDesc,
   CatalogCardTitle,
-} from "@/shared/ui/CatalogCard";
+} from "@/shared/ui/сatalog-сard";
 import Link from "next/link";
 import React from "react";
 
@@ -21,7 +22,13 @@ export function Threads() {
       </HeaderCard>
       <ContentCard classname="pt-4">
         {isLoading ? (
-          <div>Loading...</div>
+          <div className="flex flex-col space-y-3">
+            <Skeleton className="h-[125px] rounded-xl" />
+            <div className="space-y-2">
+              <Skeleton className="h-4" />
+              <Skeleton className="h-4 " />
+            </div>
+          </div>
         ) : (
           <ul className="space-y-4">
             {filterData?.map((item) => {

@@ -1,1 +1,1 @@
-export { Threads } from "./ui/mainThreads";
+export { Threads } from "./ui/main-threads";

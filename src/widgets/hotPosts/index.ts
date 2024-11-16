@@ -1,1 +1,1 @@
-export { HotPosts } from "./ui/hotPosts";
+export { HotPosts } from "./ui/hot-posts";

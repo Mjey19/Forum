@@ -5,7 +5,7 @@ import {
   CatalogCard,
   CatalogCardDesc,
   CatalogCardTitle,
-} from "@/shared/ui/CatalogCard";
+} from "@/shared/ui/сatalog-сard";
 import Link from "next/link";
 import React from "react";
 

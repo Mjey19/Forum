@@ -1,6 +1,6 @@
 import { Label } from "@/shared/ui/label";
 import { RadioGroup } from "@/shared/ui/radio-group";
-import SearchRadioLink from "@/shared/ui/searchRadioLink";
+import SearchRadioLink from "@/shared/ui/search-radio-link";
 import React from "react";
 
 export function SearchRadioContainer({
