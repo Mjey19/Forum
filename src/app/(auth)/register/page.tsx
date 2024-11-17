@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { Button } from "@/shared/ui/button";
 
+import { register } from "./register"
 import { Input } from "@/shared/ui/input";
 import { Label } from "@/shared/ui/label";
-import { redirect } from 'next/navigation';
-import { createUser, getUser } from 'app/db';
+
 
 export default function AuthPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -20,20 +20,6 @@ export default function AuthPage() {
     await new Promise((resolve) => setTimeout(resolve, 2000));
     setIsLoading(false);
   };
-
-  async function register(formData: FormData) {
-    'use server';
-    let email = formData.get('email') as string;
-    let password = formData.get('password') as string;
-    let user = await getUser(email);
-
-    if (user.length > 0) {
-      return 'User already exists'; // TODO: Handle errors with useFormStatus
-    } else {
-      await createUser(email, password);
-      redirect('/login');
-    }
-  }
 
   return (
     <div>
