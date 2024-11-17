@@ -40,6 +40,7 @@ export function HotPosts() {
           ))}
         </ul>
       </ContentCard>
+      
       <FooterCard> View All Hot Posts</FooterCard>
     </Card>
   );
