@@ -17,7 +17,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
       <Card className="w-full max-w-md bg-gray-900 border-gray-800">
         <CardHeader>
           <CardTitle className="text-2xl text-gray-100 text-center">
-            Welcome to ForumName
+            Welcome to forumName
           </CardTitle>
           <CardDescription className="text-gray-400 text-center">
             Sign in or create an account
