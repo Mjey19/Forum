@@ -96,7 +96,7 @@ export default function ForumPostPage() {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
-    <main className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8">
       <Card className="bg-gray-900 border-gray-800 mb-8">
         <CardHeader>
           <div className="flex items-center justify-between">
@@ -284,6 +284,6 @@ export default function ForumPostPage() {
           </div>
         </CardFooter>
       </Card>
-    </main>
+    </div>
   );
 }

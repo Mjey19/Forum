@@ -5,7 +5,6 @@ import { Header } from "@/widgets/header";
 import { Footer } from "../widgets/footer";
 import { ReactQueryClientProvider } from "@/shared/lib/query-client";
 
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -29,13 +28,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gray-950 text-gray-200`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full w-full bg-gray-950 text-gray-200`}
       >
-        <ReactQueryClientProvider>
-          <Header />
-          {children}
-          <Footer />
-        </ReactQueryClientProvider>
+        <div className="min-h-screen flex flex-col">
+          <ReactQueryClientProvider>
+            <Header />
+            <main className="grow">{children}</main>
+            <Footer />
+          </ReactQueryClientProvider>
+        </div>
       </body>
     </html>
   );

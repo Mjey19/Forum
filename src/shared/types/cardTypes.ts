@@ -7,4 +7,5 @@ export interface cardTypes {
   cardTime: string;
   type: "min" | "standart";
   classname?: string;
+  likes?: number;
 }

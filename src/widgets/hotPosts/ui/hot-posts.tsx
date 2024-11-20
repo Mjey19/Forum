@@ -1,6 +1,6 @@
 "use client";
 import { ContentCard, FooterCard, HeaderCard } from "@/entities/card";
-import { useHotPostList } from "@/features/hotPosts/use-hotPost-list";
+import { useHotPostList } from "@/features/posts/use-hotPost-list";
 import { Card } from "@/shared/ui/card";
 import { MinCardInfo } from "@/shared/ui/card-info";
 import { CatalogCard, CatalogCardTitle } from "@/shared/ui/сatalog-сard";

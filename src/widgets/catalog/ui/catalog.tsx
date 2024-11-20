@@ -40,45 +40,6 @@ export function Catalog() {
                 />
               </Link>
             </CatalogCard>
-            // <li
-            //   key={i}
-            //   className="border-b border-gray-800 pb-4 last:border-b-0 last:pb-0"
-            // >
-            //   <Link
-            //     href="#"
-            //     className="block hover:bg-gray-800 rounded-lg p-3 transition-colors"
-            //   >
-            //     <h3 className="font-semibold mb-1 text-gray-100">
-            //       Thread Title {i}
-            //     </h3>
-            //     <p className="text-sm text-gray-400 mb-2 line-clamp-2">
-            //       This is a brief excerpt or description of the thread content.
-            //       It provides a quick overview of what the discussion is about.
-            //     </p>
-            //     <div className="flex items-center text-xs text-gray-500 space-x-4">
-            //       <span className="flex items-center">
-            //         <User className="mr-1 h-3 w-3" />
-            //         User{i}
-            //       </span>
-            //       <span className="flex items-center">
-            //         <Calendar className="mr-1 h-3 w-3" />
-            //         {i} day{i !== 1 ? "s" : ""} ago
-            //       </span>
-            //       <span className="flex items-center">
-            //         <MessageSquare className="mr-1 h-3 w-3" />
-            //         {i * 7} replies
-            //       </span>
-            //       <span className="flex items-center">
-            //         <Eye className="mr-1 h-3 w-3" />
-            //         {i * 100} views
-            //       </span>
-            //       <span className="flex items-center">
-            //         <ThumbsUp className="mr-1 h-3 w-3" />
-            //         {i * 5} likes
-            //       </span>
-            //     </div>
-            //   </Link>
-            // </li>
           ))}
         </ul>
       </ContentCard>

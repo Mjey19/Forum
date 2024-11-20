@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { hotPostApi } from "./api";
+import { postApi } from "./api";
 
 export function useHotPostList() {
   const { data: posts, isLoading } = useQuery({
-    ...hotPostApi.getHotPost(),
+    ...postApi.getHotPostList(),
   });
   const hotPosts = posts
     ?.sort((first, second) => second.comments - first.comments)

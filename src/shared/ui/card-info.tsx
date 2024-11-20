@@ -21,10 +21,12 @@ const StandartCardInfo = ({
   username,
   cardTime,
   comments,
+  likes,
 }: {
   username?: string;
   cardTime?: string;
   comments?: number;
+  likes?: number;
 }) => {
   return (
     <div className="flex items-center text-xs text-gray-500">
