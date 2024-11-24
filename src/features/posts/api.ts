@@ -1,6 +1,6 @@
 import { jsonApiInstance } from "@/shared/lib/api-instance";
 import { cardTypes } from "@/shared/types/cardTypes";
-import { queryOptions } from "@tanstack/react-query";
+import { Mutation, queryOptions } from "@tanstack/react-query";
 
 export const postApi = {
   baseKey: "post",
@@ -20,6 +20,15 @@ export const postApi = {
         jsonApiInstance<cardTypes[]>(`catalog?id=${id}`, {
           signal: meta.signal,
         }),
+    });
+  },
+  toogleLike: (id: string, like: number) => {
+    return jsonApiInstance<cardTypes>(`catalog/${id}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ likes: like })
     });
   },
 };

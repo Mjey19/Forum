@@ -1,4 +1,5 @@
-const BASE_URL = "https://65202f63906e276284c4270d.mockapi.io/";
+// const BASE_URL = "https://65202f63906e276284c4270d.mockapi.io/";
+const BASE_URL = "http://localhost:3000/";
 
 class ApiError extends Error {
   constructor(public response: Response) {

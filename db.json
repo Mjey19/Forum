@@ -1,0 +1,76 @@
+{
+  "catalog": [
+    {
+      "id": "1",
+      "username": "user",
+      "title": "thread title",
+      "comments": 0,
+      "cardTime": "23",
+      "description": "thread description",
+      "likes": 20
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "title": "thread title",
+      "comments": 21,
+      "cardTime": "23",
+      "description": "thread description",
+      "likes": 2
+    },
+    {
+      "id": "3",
+      "username": "user",
+      "title": "thread title",
+      "comments": 23,
+      "cardTime": "23",
+      "description": "thread description",
+      "likes": 134
+    },
+    {
+      "id": "4",
+      "username": "user",
+      "title": "thread title",
+      "comments": 121,
+      "cardTime": "23",
+      "description": "thread description",
+      "likes": 34
+    },
+    {
+      "id": "5",
+      "username": "user",
+      "title": "thread title",
+      "comments": 1,
+      "cardTime": "23",
+      "description": "thread description",
+      "likes": 13
+    },
+    {
+      "id": "6",
+      "username": "user",
+      "title": "thread title",
+      "comments": 3,
+      "cardTime": "23",
+      "description": "thread description",
+      "likes": 13
+    },
+    {
+      "id": "7",
+      "username": "user",
+      "title": "thread title",
+      "comments": 4,
+      "cardTime": "23",
+      "description": "thread description",
+      "likes": 13
+    },
+    {
+      "id": "8",
+      "username": "user",
+      "title": "thread title",
+      "comments": 431,
+      "cardTime": "23",
+      "description": "thread description",
+      "likes": 13
+    }
+  ]
+}
