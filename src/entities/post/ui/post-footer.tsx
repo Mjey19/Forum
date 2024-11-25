@@ -12,14 +12,14 @@ type footerTypes = {
 };
 export function PostFooter({ ...props }: footerTypes) {
   const { likes = 0, comments, id } = props;
-  const { toggleLike, isLiked } = useToogleLike(id, likes);
+  const { toggleLike, isLiked, isLoading } = useToogleLike(id, likes);
   const { isClicked, handleShare } = useHandleShare();
-  
 
   return (
     <CardFooter className="flex justify-between">
       <div className="flex space-x-4">
         <Button
+          disabled={isLoading}
           onClick={() => toggleLike()}
           variant={isLiked ? "destructive" : "ghost"}
           size="sm"
@@ -41,6 +41,7 @@ export function PostFooter({ ...props }: footerTypes) {
           Comment ({comments.length})
         </Button>
         <Button
+          disabled={isClicked}
           onClick={handleShare}
           variant="ghost"
           size="sm"

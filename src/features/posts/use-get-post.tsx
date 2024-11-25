@@ -5,5 +5,6 @@ export function useGetPost(id: string) {
   const { data: post = [], isLoading } = useQuery({
     ...postApi.getPost(id),
   });
+  
   return { post, isLoading };
 }

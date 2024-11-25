@@ -87,7 +87,7 @@ export function Comments({ id }: { id: string }) {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  const { username, cardTime, likes } = post[0];
+  // const { username, cardTime, likes } = post;
 
   return (
     <Card className="bg-gray-900 border-gray-800">

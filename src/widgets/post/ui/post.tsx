@@ -8,11 +8,13 @@ import React from "react";
 
 export function Post({ id }: { id: string }) {
   const { post, isLoading } = useGetPost(id);
-  if (isLoading) {
+  if (isLoading && post !== undefined) {
     return <div>Loading...</div>;
   }
-  const { username, cardTime, likes } = post[0];
 
+  const { username, cardTime, likes } = post;
+
+  console.log(post);
   return (
     <Card className="bg-gray-900 border-gray-800 mb-8">
       <PostHeader username={username} cardTime={cardTime} title={title} />
