@@ -2,6 +2,7 @@
 import { Badge } from "@/shared/ui/badge";
 import React, { useState } from "react";
 import { Label } from "@/shared/ui/label";
+import { useFormContext } from "react-hook-form";
 export function SearchBadge({
   title,
   type,
@@ -9,6 +10,7 @@ export function SearchBadge({
   title: string;
   type: "num" | "str";
 }) {
+  const { setValue } = useFormContext();
   const badgeArr = {
     str: ["0", "10", "100", "1k", "10k"],
     num: ["0", "1", "2", "3", "4", "5"],
@@ -17,9 +19,11 @@ export function SearchBadge({
   const toggleBadge = (
     value: string,
     setter: React.Dispatch<React.SetStateAction<string>>,
-    current: string
+    current: string,
+    name: string
   ) => {
     setter(current === value ? "0" : value);
+    setValue(name, value);
   };
   return (
     <div className="space-y-2">
@@ -34,7 +38,7 @@ export function SearchBadge({
                 ? "bg-blue-600 text-white hover:bg-blue-700"
                 : "text-gray-200 hover:bg-gray-800"
             } transition-colors`}
-            onClick={() => toggleBadge(value, setMinValue, minValue)}
+            onClick={() => toggleBadge(value, setMinValue, minValue, title)}
           >
             {value}
           </Badge>

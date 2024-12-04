@@ -14,7 +14,6 @@ export function Post({ id }: { id: string }) {
 
   const { username, cardTime, likes } = post;
 
-  console.log(post);
   return (
     <Card className="bg-gray-900 border-gray-800 mb-8">
       <PostHeader username={username} cardTime={cardTime} title={title} />

@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/shared/ui/avatar";
 import { Button } from "@/shared/ui/button";
 import { CardHeader, CardTitle } from "@/shared/ui/card";
+import { Popover, PopoverContent, PopoverTrigger } from "@/shared/ui/popover";
 import { MoreHorizontal } from "lucide-react";
 import React from "react";
 
@@ -29,9 +30,28 @@ export function PostHeader({ ...props }: headerType) {
             </p>
           </div>
         </div>
-        <Button variant="ghost" size="icon">
-          <MoreHorizontal className="h-5 w-5" />
-        </Button>
+        <Popover >
+          {/* <Button variant="ghost" size="icon"> */}
+          <PopoverTrigger
+            className=" hover:bg-accent hover:text-accent-foreground"
+            variant="ghost"
+            size="icon"
+            
+          >
+            <MoreHorizontal className="h-5 w-5" />
+          </PopoverTrigger>
+          {/* </Button> */}
+          <PopoverContent className="h-20 w-20 bg-secondary">
+            <div className="flex flex-col gap-1">
+              <Button variant="default" >
+                Изменить
+              </Button>
+              <Button variant="default" >
+                Удалить
+              </Button>
+            </div>
+          </PopoverContent>
+        </Popover>
       </div>
     </CardHeader>
   );

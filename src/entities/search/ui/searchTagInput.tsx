@@ -2,11 +2,12 @@ import { Badge } from "@/shared/ui/badge";
 import { Input } from "@/shared/ui/input";
 import { X } from "lucide-react";
 import React, { useState } from "react";
+// import { useFormContext } from "react-hook-form";
 
 export function SearchTagInput() {
   const [tags, setTags] = useState<string[]>([]);
   const [tagInput, setTagInput] = useState("");
-
+  // const { setValue } = useFormContext();
   const handleTagInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "," || e.key === "Enter") {
       e.preventDefault();
@@ -23,7 +24,7 @@ export function SearchTagInput() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-full h-full">
       <Input
         id="tags"
         value={tagInput}
@@ -32,12 +33,12 @@ export function SearchTagInput() {
         className="bg-gray-800 border-gray-700 text-gray-100 pl-2 pr-2 py-2"
         placeholder={tags.length ? "" : "Enter tags, separate with comma..."}
       />
-      <div className="absolute top-1.5 left-2 right-2 flex flex-wrap gap-1 pointer-events-none">
+      <div className="mt-1 flex flex-wrap gap-1">
         {tags.map((tag) => (
           <Badge
             key={tag}
             variant="secondary"
-            className="bg-blue-600 hover:bg-blue-700 text-white text-xs py-1 pl-2.5 pr-1.5"
+            className="bg-blue-600  hover:bg-blue-700 text-white text-xs py-1 pl-2.5 pr-1.5"
           >
             {tag}
             <button

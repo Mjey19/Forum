@@ -8,15 +8,19 @@ import {
 } from "@/shared/ui/select";
 import React from "react";
 import { Input } from "@/shared/ui/input";
+import { useFormContext } from "react-hook-form";
 
 export function SearchSelect() {
+  const { setValue, register } = useFormContext();
   return (
     <>
       <div className="space-y-2">
         <Label htmlFor="category" className="text-gray-200">
           Category
         </Label>
-        <Select>
+        <Select
+          onValueChange={(value: string) => setValue("content-type", value)}
+        >
           <SelectTrigger
             id="category"
             className="bg-gray-800 border-gray-700 text-gray-100"
@@ -37,7 +41,9 @@ export function SearchSelect() {
         <Label htmlFor="sort" className="text-gray-200">
           Sort By
         </Label>
-        <Select>
+        <Select
+          onValueChange={(value: string) => setValue("content-popular", value)}
+        >
           <SelectTrigger
             id="sort"
             className="bg-gray-800 border-gray-700 text-gray-100"
@@ -56,11 +62,13 @@ export function SearchSelect() {
         <Label className="text-gray-200">Date Range</Label>
         <div className="flex items-center space-x-2">
           <Input
+            {...register("start-data")}
             type="date"
             className="bg-gray-800 border-gray-700 text-gray-100"
           />
           <span>to</span>
           <Input
+            {...register("last-data")}
             type="date"
             className="bg-gray-800 border-gray-700 text-gray-100"
           />

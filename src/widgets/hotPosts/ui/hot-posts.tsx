@@ -33,7 +33,7 @@ export function HotPosts() {
                   <CatalogCardTitle classname="font-medium text-gray-200 line-clamp-1">
                     Hot Topic Title Goes Here
                   </CatalogCardTitle>
-                  <MinCardInfo comments={post.comments} likes={12 * post.id} />
+                  <MinCardInfo comments={post.comments} likes={12 * +post.id} />
                 </div>
               </Link>
             </CatalogCard>
