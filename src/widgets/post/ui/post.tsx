@@ -8,10 +8,10 @@ import React from "react";
 
 export function Post({ id }: { id: string }) {
   const { post, isLoading } = useGetPost(id);
+  
   if (isLoading && post !== undefined) {
     return <div>Loading...</div>;
   }
-
   const { username, cardTime, likes } = post;
 
   return (
