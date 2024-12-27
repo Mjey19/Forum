@@ -1,5 +1,5 @@
 import { jsonApiInstance } from "@/shared/lib/api-instance";
-import { cardTypes } from "@/shared/types/cardTypes";
+import { cardTypes } from "@/shared/types/card-types";
 import { queryOptions } from "@tanstack/react-query";
 
 export const threadsListApi = {

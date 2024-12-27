@@ -8,4 +8,5 @@ export interface cardTypes {
   type: "min" | "standart";
   classname?: string;
   likes?: number;
+  commentsArr: []
 }

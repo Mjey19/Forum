@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useDispatch, useSelector } from "react-redux";
 import { toogleLikePost } from "./like-slice";
 import { postApi } from "../posts/api";
-import { cardTypes } from "@/shared/types/cardTypes";
+import { cardTypes } from "@/shared/types/card-types";
 import { useState } from "react";
 
 export const useToogleLike = (id: string, currLikes: number) => {

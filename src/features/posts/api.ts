@@ -1,5 +1,6 @@
+// import { commentType } from "@/entities/post-commets/types/post-type";
 import { jsonApiInstance } from "@/shared/lib/api-instance";
-import { cardTypes } from "@/shared/types/cardTypes";
+import { cardTypes } from "@/shared/types/card-types";
 import { queryOptions } from "@tanstack/react-query";
 
 export const postApi = {
@@ -23,6 +24,16 @@ export const postApi = {
         }),
     });
   },
+  // getPostComments: (id: string) => {
+  //   return queryOptions({
+  //     queryKey: ["comments"],
+  //     queryFn: (meta) =>
+  //       jsonApiInstance<commentType>(`comments?postId=${id}`, {
+  //         method: "GET",
+  //         signal: meta.signal,
+  //       }),
+  //   });
+  // },
   toogleLike: (id: string, like: number) => {
     return jsonApiInstance<cardTypes>(`catalog/${id}`, {
       method: "PATCH",

@@ -1,99 +1,32 @@
 import { PostComments } from "@/entities/post-commets";
 import { PostCommentsForm } from "@/entities/post-commets";
-import { useGetPost } from "@/features/posts/use-get-post";
-import { Button } from "@/shared/ui/button";
+import { commentType } from "@/shared/types/comment-type";
+import { useGetComments } from "@/features/post/use-get-comments";
+// import { Button } from "@/shared/ui/button";
 import {
   Card,
   CardContent,
-  CardFooter,
+  // CardFooter,
   CardHeader,
   CardTitle,
 } from "@/shared/ui/card";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import React, { useState } from "react";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
 
 export function Comments({ id }: { id: string }) {
-  const { post, isLoading } = useGetPost(id);
-
-  const [comments, setComments] = useState([
-    {
-      id: 1,
-      author: "Alice",
-      content: "Great post! I learned a lot from this.",
-      timeStamp: "2 hours ago",
-      likes: 5,
-    },
-    {
-      id: 2,
-      author: "Bob",
-      content:
-        "I have a question about the third point. Can you elaborate more on that?",
-      timeStamp: "1 hour ago",
-      likes: 2,
-    },
-    {
-      id: 3,
-      author: "Charlie",
-      content: "Thanks for sharing this information. It's very helpful.",
-      timeStamp: "30 minutes ago",
-      likes: 1,
-    },
-    {
-      id: 4,
-      author: "David",
-      content: "I've been using these techniques and they really work!",
-      timeStamp: "15 minutes ago",
-      likes: 3,
-    },
-    {
-      id: 5,
-      author: "Eve",
-      content:
-        "Could you recommend any resources for further reading on this topic?",
-      timeStamp: "5 minutes ago",
-      likes: 0,
-    },
-  ]);
-
-  // const [newComment, setNewComment] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const commentsPerPage = 3;
-
-  // const handleCommentSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   if (newComment.trim()) {
-  //     const newCommentObj = {
-  //       id: comments.length + 1,
-  //       author: "Current User",
-  //       content: newComment,
-  //       timeStamp: "Just now",
-  //       likes: 0,
-  //     };
-  //     setComments([...comments, newCommentObj]);
-  //     setNewComment("");
-  //   }
-  // };
-
-  const indexOfLastComment = currentPage * commentsPerPage;
-  const indexOfFirstComment = indexOfLastComment - commentsPerPage;
-  const currentComments = comments.slice(
-    indexOfFirstComment,
-    indexOfLastComment
-  );
-  const totalPages = Math.ceil(comments.length / commentsPerPage);
-
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
+  const { comments, isLoading } = useGetComments(id);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const totalPages = comments.length;
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  // const { username, cardTime, likes } = post;
+  console.log("comments", comments);
 
   return (
     <Card className="bg-gray-900 border-gray-800">
       <CardHeader>
         <CardTitle className="text-lg font-semibold text-gray-100">
-          Comments ({comments.length})
+          Comments ({})
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -108,22 +41,21 @@ export function Comments({ id }: { id: string }) {
             Post Comment
           </Button>
         </form> */}
-        <PostCommentsForm />
+        <PostCommentsForm id={id} />
         <div className="space-y-6">
-          {currentComments.map((comment, index) => (
+          {comments.map((comment: commentType, index) => (
             <PostComments
-              key={comment.id}
-              index={index}
-              len={comments.length}
-              timeStemp={comment.timeStamp}
-              author={comment.author}
-              content={comment.content}
-              likes={comment.likes}
+              postId={comment.postId}
+              key={index}
+              commentTime={comment.commentTime}
+              userName={comment.userName}
+              commentContent={comment.commentContent}
+              commentLike={comment.commentLike}
             />
           ))}
         </div>
       </CardContent>
-      <CardFooter>
+      {/* <CardFooter>
         <div className="w-full flex items-center justify-between">
           <Button
             variant="secondary"
@@ -149,7 +81,7 @@ export function Comments({ id }: { id: string }) {
             <ChevronRight className="h-4 w-4 ml-2" />
           </Button>
         </div>
-      </CardFooter>
+      </CardFooter> */}
     </Card>
   );
 }

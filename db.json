@@ -72,5 +72,45 @@
       "description": "thread description",
       "likes": 13
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "postId": "1",
+      "userId": "1",
+      "userName": "Jordan",
+      "userLogo": "",
+      "commentLike": 12,
+      "commentTime": "2",
+      "commentContent": "123123fdsfwefdsfsdf"
+    },
+    {
+      "id": "2",
+      "postId": "1",
+      "userId": "2",
+      "userName": "Annya",
+      "userLogo": "",
+      "commentLike": 0,
+      "commentTime": "212",
+      "commentContent": "123123fdsfwefdsfsdf"
+    },
+    {
+      "id": "3",
+      "postId": "2",
+      "userId": "3",
+      "userName": "Jonh",
+      "userLogo": "",
+      "commentLike": 2,
+      "commentTime": "12",
+      "commentContent": "123123fdsfwefdsfsdf"
+    },
+    {
+      "id": "fb20",
+      "commentLike": 10,
+      "commentTime": "203",
+      "userName": "Andrey",
+      "commentContent": "231231fdsf",
+      "postId": "1"
+    }
   ]
 }

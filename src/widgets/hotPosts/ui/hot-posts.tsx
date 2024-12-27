@@ -23,7 +23,7 @@ export function HotPosts() {
           {hotPosts?.map((post, index) => (
             <CatalogCard key={post.id}>
               <Link
-                href="#"
+                href={`catalog/${post.id}`}
                 className="flex items-center space-x-3 hover:bg-gray-800 rounded-lg p-2 transition-colors"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-pink-500 rounded-lg flex items-center justify-center text-2xl font-bold text-white">

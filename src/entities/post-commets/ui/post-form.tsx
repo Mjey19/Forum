@@ -1,25 +1,25 @@
+import { useCreateComment } from "@/features/post/use-create-comment";
 import { Button } from "@/shared/ui/button";
 import { Textarea } from "@/shared/ui/textarea";
 import React, { useState } from "react";
 
-export function PostCommentsForm() {
-    const [newComment, setNewComment] = useState("");
-    const handleCommentSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // if (newComment.trim()) {
-        //   const newCommentObj = {
-        //     id: comments.length + 1,
-        //     author: "Current User",
-        //     content: newComment,
-        //     timeStamp: "Just now",
-        //     likes: 0,
-        //   };
-        //   setComments([...comments, newCommentObj]);
-        //   setNewComment("");
-        // }
-      };
+export function PostCommentsForm({ id }: { id: string }) {
+  const [newComment, setNewComment] = useState("");
+  const { handleCommentSubmit } = useCreateComment(id);
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault(); 
+    handleCommentSubmit(e, {
+      commentLike: 10,
+      commentTime: "203",
+      userName: "Andrey",
+      commentContent: newComment,
+      postId: id,
+    });
+    setNewComment(""); 
+  };
+  // const handleCommentSubmit = (e: React.FormEvent) => {};
   return (
-    <form onSubmit={handleCommentSubmit} className="mb-6">
+    <form onSubmit={onSubmit} className="mb-6">
       <Textarea
         placeholder="Write a comment..."
         value={newComment}

@@ -8,7 +8,7 @@ import { useToogleLike } from "@/features/post/use-toogle-like";
 type footerTypes = {
   id: string;
   likes: number | undefined;
-  comments: object[];
+  comments: number;
 };
 export function PostFooter({ ...props }: footerTypes) {
   const { likes = 0, comments, id } = props;
@@ -38,7 +38,7 @@ export function PostFooter({ ...props }: footerTypes) {
           className="text-gray-400 hover:text-blue-400 hover:bg-gray-800"
         >
           <MessageSquare className="mr-2 h-4 w-4" />
-          Comment ({comments.length})
+          Comment ({comments})
         </Button>
         <Button
           disabled={isClicked}
